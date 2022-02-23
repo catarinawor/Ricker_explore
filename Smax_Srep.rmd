@@ -29,9 +29,11 @@ sgenfun<-function(Sgen,theta,Smsy){
 
 For the purpose of this demonstration we will assume that the salmon populations follow the deterministic Ricker curve withe the following specification.
 
-$R_t = a*S_t*exp(-b*S_t)$
+$R_t = a*S_t*exp(-b*S_t)$ 
+
 $S_{max} = \frac{1}{b}$
-$S_{rep}$ = \frac{log(a)}{b}
+
+$S_{rep} = \frac{log(a)}{b}$
 
 Where
 
@@ -39,7 +41,7 @@ $R_t$ is the recruitment for brood year t
 $S_t$ is the spawners for brood year t
 $a$ is the productivity parameter (slope near the origin)
 $b$ is the inverse of the capacity parameter
-$S_{max}$ is the spawners that maximize recruits (spawners ate the peak of the curve)
+$S_{max}$ is the spawners that maximize recruits (spawners at the peak of the curve)
 $S_{rep}$ is the spawners at replacement, x spawners will produce x recruits
 
 In the following sections we will investigate the effects of assuming time varying $a$ and $b$ and keeping $Srep$ constant or allowing it to vary. 

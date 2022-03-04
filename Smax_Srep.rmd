@@ -222,11 +222,23 @@ for(i in seq_along(a3)){
 dfp<-data.frame(S=rep(S,length(a3)),
  R=R,
  a=rep(a3,each=length(S)),
- Srep=rep(Srep3,each=length(S)))
+ Srep=rep(Srep3,each=length(S)),
+ Smsy=rep(Smsy3,each=length(S)),
+ Sgen=rep(Sgen3,each=length(S))
+ )
 
 p3 <- ggplot(dfp) +
   geom_line(aes(x=S, y=R, color=as.factor(a)), size=1.3) +
   geom_vline(aes(xintercept=Srep, color=as.factor(a))) +
+ # geom_vline(aes(xintercept=Smax, color=as.factor(Smax))) +
+theme_bw(14)+ scale_color_viridis_d() +ggtitle("a and Srep vary")+
+coord_cartesian(ylim=c(0,32000))
+
+
+ggplot(dfp) +
+  geom_line(aes(x=S, y=R, color=as.factor(a)), size=1.3) +
+  geom_vline(aes(xintercept=Smsy, color=as.factor(a))) +
+   geom_vline(aes(xintercept=Smsy, color=as.factor(a))) +
  # geom_vline(aes(xintercept=Smax, color=as.factor(Smax))) +
 theme_bw(14)+ scale_color_viridis_d() +ggtitle("a and Srep vary")+
 coord_cartesian(ylim=c(0,32000))
@@ -303,3 +315,8 @@ pbg2 <- ggplot(df) +
 plot_grid(pb2,pbg2)
 
 ```
+
+# Questions for disussion
+
+- What are the potential mechanistic drivers of each one of these scenarios
+- How would we go about testing it empiically? Fit both forms of the model and compare with selection criteria?
